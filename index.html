@@ -5,10 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fella Harvest Blog</title>
-  <link rel="stylesheet" href="base.css">
-  <link rel="stylesheet" href="medium.css">
-  <link rel="stylesheet" href="large.css">
-  <link rel="stylesheet" href="normalize.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/medium.css">
+  <link rel="stylesheet" href="styles/large.css">
+  <link rel="stylesheet" href="styles/normalize.css">
 </head>
 
 <body>
@@ -18,25 +19,33 @@
       <button id="hamburgerBtn" ><span>&#9776;</span><span>X</span></button>
       <ul id="primaryNav">
         <li><a href="index.html">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="aboutus.html">About</a></li>
+        <li><a href="contactus.html">Contact</a></li>
+        <li><a href="portifolio.html">Portifolio</a></li>
       </ul>
     </nav>
   </header>
 
-    <span id="lastModified"></span>
-
+  <main>
+    <h3 id="lastModified"></h3>
   <section class="about">
     <h2>About Fella Harvest</h2>
-    <p>Deira, Dubai, AE</p>
+    <p class="address">Deira, Dubai, AE</p>
     <p>A web developer and designer + Fashion + travel + Hotel + and founder of FlellaHarvest, a web design agency as well as
       your virtual travel consultant. I aspire to excel in affiliate marketing and sell digital designs while continuously
       learning. Through my website, I showcase my portfolio, offer web design services, and provide valuable content.
       Passionate about growth, I aim to build strong client relationships and establish a reputable brand.</p>
   </section>
 
-  <div class="blog-posts">
-    <h2> What's trending</h2>
+  <section class="blog-posts">
+    <article>
+      <h3>Opposition politics have started early</h3>
+      <p>Police has realised the model political opposition leaders are implementing may a preparation to distablise the country 
+        "spokesperson uganda Enanga has comfirmed this during his last address on tv when he was asked about the bomb threats 
+        in the country".<img src="images/flella_2.jpg" alt="police">
+      </p>
+    </article>
+
     <article>
       <h3>Blog Post Title</h3>
       <p>Blog post content goes here.</p>
@@ -61,7 +70,7 @@
       <h3>Another Blog Post Title</h3>
       <p>Another blog post content goes here.</p>
     </article>
-  </div>
+  </section>
 
   <section class="business">
     <div class="offers" id="offer">
@@ -69,9 +78,9 @@
     </div>
     <h2>Business Trends</h2>
     <div class="trending-images">
-      <img src="#" alt="Trending Design 1">
-      <img src="#" alt="Trending Design 2">
-      <img src="#" alt="Trending Design 3">
+      <img src="images/emirates.jpeg" alt="Trending Design 1">
+      <img src="images/pomegranate.jpg" alt="Trending Design 2">
+      <img src="images/salad.jpg" alt="Trending Design 3">
     </div>
   </section>
 
@@ -98,12 +107,16 @@
       <p>Description and affiliate link for Product 3.</p>
       <a href="#" target="_blank" class="btn">Buy Now</a>
     </div>
-
   </section>
-
+  </main>
+  
   <footer>
     <p>&copy; <span id="year"></span> <a href="#" target="_blank"> Fella Harvest Blog. All rights reserved.</a> Last Modified: Aughust 1, 2023</p>
+    <div class="socialmedia">
+      <a href="https://instagram.com/nathank2?igshid=ZmZhODViOGI=" target="_blank"><img src="images/instagram.png" alt="instagram" class="instagram-logo"></a>
+      <a href="https://www.facebook.com/profile.php?id=100063537615114" target="_blank"><img src="images/facebook.png" alt="facebook" class="fb-logo"></a>
+     </div>
   </footer>
-  <script src="main.js"></script>
+  <script src="scripts/main.js"></script>
 </body>
 </html>
