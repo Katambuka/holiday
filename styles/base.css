@@ -142,6 +142,13 @@ button {
 }
 
 /* Blog Posts Section */
+.blog-posts article {
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+}
+
+
 .blog-posts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -162,7 +169,10 @@ img:hover {
 .blog-posts article {
   background-color: #fff;
   padding: 20px;
+  margin: 20px;
   border-radius: 5px;
+  width: 450px;
+  height: auto;
 }
 
 .blog-posts h3 {
@@ -199,13 +209,14 @@ img:hover {
 /* Affiliate Section */
 .affiliate {
   padding: 20px;
-  align-content: center;
+
   
 }
 
 .affiliate h2 {
   font-size: 2rem;
   margin-bottom: 20px;
+  justify-content: center;
 }
 
 .affiliate-content {
@@ -250,3 +261,14 @@ footer {
   text-align: center;
   padding: 10px;
 }
+
+/* Style the iframe */
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
