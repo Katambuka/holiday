@@ -4,16 +4,18 @@
   .container {
     grid-template-columns: repeat(2, 1fr);
   }
-  .blog-posts {
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
-  }
+  
   .trending-images {
     grid-template-columns: repeat(2, minmax(200px, 1fr));
   }
 
   .affiliate {
-    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
   }
-  
-
+  .blog-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+  }
 }

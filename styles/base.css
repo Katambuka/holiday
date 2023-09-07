@@ -17,9 +17,10 @@ body {
   line-height: 1.6;
   color: var(--text-color);
   background-color: var(--background-color);
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
 }
+
 
 a {
   color: #fff;
@@ -105,6 +106,9 @@ nav ul.open {
   font-size: 24px;
 }
 
+span {
+  justify-content: center;
+}
 .about {
   padding: 20px;
 }
@@ -123,7 +127,7 @@ nav ul.open {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-/*
+
 button {
   display: inline-block;
   padding: 10px 20px;
@@ -132,10 +136,10 @@ button {
   font-size: 16px;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
+  cursor: pointer;  
   text-decoration: none;
   transition: background-color 0.3s;
-}*/
+}
 
 .about p {
   margin: 10px;
@@ -148,13 +152,6 @@ button {
   border: 1px solid #ddd;
 }
 
-
-.blog-posts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  grid-gap: 20px;
-  padding: 20px;
-}
 .blog-posts img{
   max-width: 100%;
   height: auto;
@@ -209,7 +206,6 @@ img:hover {
 /* Affiliate Section */
 .affiliate {
   padding: 20px;
-
   
 }
 
@@ -260,15 +256,5 @@ footer {
   color: #fff;
   text-align: center;
   padding: 10px;
-}
-
-/* Style the iframe */
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
 }
 
