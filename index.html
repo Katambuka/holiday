@@ -27,8 +27,6 @@
   </header>
 
   <main>
-    <span id="lastModified"></span>
-    
   <section class="about">
     <h2>About Fella Harvest</h2>
     <p class="address">Deira, Dubai, AE</p>
@@ -38,7 +36,8 @@
       Passionate about growth, I aim to build strong client relationships and establish a reputable brand.</p>
   </section>
 
-  <section class="blog-posts">
+  <div class="blog"> <h2>Trending News</h2><hr>
+  <section class="blog-posts"> 
     <article>
       <h3>Opposition politics have started early</h3>
       <p>Police has realised the model political opposition leaders are implementing may a preparation to distablise the country 
@@ -63,8 +62,59 @@
     </article>
 
     <article>
-      <h3>Another Blog Post Title</h3>
-      <p>Another blog post content goes here.</p>
+      <h3>Weather fore cast </h3>
+      <span id="lastModified"></span>
+    <section class="weather"><hr>
+      <h2 class="weather-heading">Dubai Weather</h2>
+      <div class="weather-container">
+        <div class="weather-card">
+          <div class="weather-icon">
+            <img id="icon" src="#" alt="weather-icon">
+            <p id="temperature" class="temperature">-- °F</p>
+            <p id="condition" class="condition">--</p>
+            <p id="humidity" class="humidity">--%</p>
+          </div>
+
+          <div class="forecast-card">
+            <h2 class="forecast-heading" >3-Day Forecast</h2>
+            <div class="forecast-container">
+              <div class="day forecast-day" id="day1">
+                <h4 class="forecast-day-heading">Temps</h4>
+                <div class="forecast-day-info">
+                  <p class="forecast-day-temp"></p>
+                  <div class="forecast-day-temperature">
+                    <span class="forecast-day-hi" id="day1Hi"></span>
+                    <span class="forecast-day-low" id="day1Lo"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="day forecast-day" id="day2">
+                <h4 class="forecast-day-heading">Temps</h4>
+                <div class="forecast-day-info">
+                  <p class="forecast-day-temp"></p>
+                  <div class="forecast-day-temperature">
+                    <span class="forecast-day-hi" id="day2Hi"></span>
+                    <span class="forecast-day-low" id="day2Lo"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="day forecast-day" id="day3">
+                <h4 class="forecast-day-heading">Temps</h4>
+                <div class="forecast-day-info">
+                  <p class="forecast-day-temp"></p>
+                  <div class="forecast-day-temperature">
+                    <span class="forecast-day-hi" id="day3Hi"></span>
+                    <span class="forecast-day-low" id="day3Lo"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     </article>
     
     <article>
@@ -119,7 +169,7 @@
       <p>Description and affiliate link for Product 3.</p>
       <a href="#" target="_blank" class="btn">Buy Now</a>
     </div>
-  </section>
+  </section></div>
   </main>
   
   <footer>
@@ -130,5 +180,6 @@
      </div>
   </footer>
   <script src="scripts/main.js"></script>
+  <script src="scripts/weather.js"></script>
 </body>
 </html>

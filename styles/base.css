@@ -74,6 +74,7 @@ nav ul li a:hover {
 nav ul {
   display: none;
 }
+
 nav ul.open {
   display: block;
 }
@@ -106,9 +107,6 @@ nav ul.open {
   font-size: 24px;
 }
 
-span {
-  justify-content: center;
-}
 .about {
   padding: 20px;
 }
@@ -149,7 +147,13 @@ button {
 .blog-posts article {
   padding: 20px;
   margin-bottom: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid green;
+}
+
+.blog h2 {
+  text-align: center;
+  font-weight: 400;
+  color:red;
 }
 
 .blog-posts img{
@@ -176,6 +180,112 @@ img:hover {
   font-size: 1.8rem;
   margin-bottom: 10px;
 }
+
+/***weather***/
+
+.weather {
+  text-align: center;
+}
+
+.weather-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: green;
+}
+
+.weather-container {
+  display: flex;
+  justify-content: center;
+}
+
+.weather-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.weather-icon img {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 10px;
+}
+
+.temperature {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.condition {
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.humidity {
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.forecast-heading {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.forecast-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.forecast-day {
+  flex: 0 0 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.forecast-day-heading {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.forecast-day-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.forecast-day-temp {
+  font-size: 14px;
+  color: #fff;
+  margin-right: 5px;
+}
+
+.forecast-day-temperature {
+  display: flex;
+  align-items: center;
+}
+
+.forecast-day-temperature span {
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.forecast-day-temperature span:last-child {
+  margin-right: 0;
+}
+
 
 /* Business Section */
 .business {
