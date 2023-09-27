@@ -19,13 +19,11 @@
     display: flex;
     margin-left: 2vw;
     justify-content: center;
-    border-right: 1px solid rgba(0, 0, 0, 0.3);
     font-size: 24px;
   }
 
   nav ul li a {
     border: none;
-    border-left: 1px solid rgba(0, 0, 0, 0.3);
   }
   
 }

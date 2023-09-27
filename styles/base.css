@@ -23,7 +23,7 @@ body {
 
 
 a {
-  color: #fff;
+  color: #000;
   text-decoration: none;
 }
 
@@ -31,6 +31,13 @@ a {
 header {
   background-color: #335c67;
   color: #fff;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+main {
+  max-width: 100%;
+  margin: 0 auto;
   padding: 20px;
 }
 
@@ -125,7 +132,6 @@ nav ul.open {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-
 button {
   display: inline-block;
   padding: 10px 20px;
@@ -137,6 +143,7 @@ button {
   cursor: pointer;  
   text-decoration: none;
   transition: background-color 0.3s;
+  margin: 0 auto;
 }
 
 .about p {
@@ -144,10 +151,15 @@ button {
 }
 
 /* Blog Posts Section */
+.blog-posts {
+  padding: 20px;
+}
+
 .blog-posts article {
   padding: 20px;
   margin-bottom: 20px;
   border: 1px solid green;
+  margin: 0 auto;
 }
 
 .blog h2 {
@@ -366,5 +378,6 @@ footer {
   color: #fff;
   text-align: center;
   padding: 10px;
+  margin: 0 auto;
 }
 
