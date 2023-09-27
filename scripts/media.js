@@ -1,86 +1,115 @@
-const AudioContext = window.AudioContext || window.webkitAudioContext;
-const audioCtx = new AudioContext();
+const media = document.querySelector("video");
+const controls = document.querySelector(".controls");
 
-const audioElement = document.querySelector("audio");
-const playBtn = document.querySelector("button");
-const volumeSlider = document.querySelector(".volume");
+const play = document.querySelector(".play");
+const stop = document.querySelector(".stop");
+const rwd = document.querySelector(".rwd");
+const fwd = document.querySelector(".fwd");
 
-const audioSource = audioCtx.createMediaElementSource(audioElement);
+const timerWrapper = document.querySelector(".timer");
+const timer = document.querySelector(".timer span");
+const timerBar = document.querySelector(".timer div");
 
-// play/pause audio
-playBtn.addEventListener("click", () => {
-   // check if context is in suspended state (autoplay policy)
-   if (audioCtx.state === "suspended") {
-     audioCtx.resume();
-   }
- 
-   // if track is stopped, play it
-   if (playBtn.getAttribute("class") === "paused") {
-     audioElement.play();
-     playBtn.setAttribute("class", "playing");
-     playBtn.textContent = "Pause";
-     // if track is playing, stop it
-   } else if (playBtn.getAttribute("class") === "playing") {
-     audioElement.pause();
-     playBtn.setAttribute("class", "paused");
-     playBtn.textContent = "Play";
-   }
- });
- 
- // if track ends
- audioElement.addEventListener("ended", () => {
-   playBtn.setAttribute("class", "paused");
-   playBtn.textContent = "Play";
- });
+//remove defaultt controlls
+media.removeAttribute("controls");
+controls.style.visibility = "visible";
 
- // volume
-const gainNode = audioCtx.createGain();
-
-volumeSlider.addEventListener("input", () => {
-  gainNode.gain.value = volumeSlider.value;
-});
-
-audioSource.connect(gainNode).connect(audioCtx.destination);
-
-const em = document.createElement("em"); // create a new em element
-const para = document.querySelector("p"); // reference an existing p element
-em.textContent = "Hello there!"; // give em some text content
-para.appendChild(em); // embed em inside para
-
-const canvas = document.querySelector("canvas");
-const ctx = canvas.getContext("2d");
-
-Ball.prototype.draw = function () {
-  ctx.beginPath();
-  ctx.fillStyle = this.color;
-  ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
-  ctx.fill();
-};
-
-// play/pause audio
-playBtn.addEventListener("click", () => {
-  // check if context is in suspended state (autoplay policy)
-  if (audioCtx.state === "suspended") {
-    audioCtx.resume();
+//playing and pausing movie
+play.addEventListener("click", playPauseMedia);
+function playPauseMedia() {
+  if (media.paused) {
+    play.setAttribute("data-icon", "u");
+    media.play();
+  } else {
+    play.setAttribute("data-icon", "P");
+    media.pause();
   }
+}
 
-  // if track is stopped, play it
-  if (playBtn.getAttribute("class") === "paused") {
-    audioElement.play();
-    playBtn.setAttribute("class", "playing");
-    playBtn.textContent = "Pause";
-    // if track is playing, stop it
-  } else if (playBtn.getAttribute("class") === "playing") {
-    audioElement.pause();
-    playBtn.setAttribute("class", "paused");
-    playBtn.textContent = "Play";
+//now stopping the movie 
+stop.addEventListener("click", stopMedia);
+media.addEventListener("ended", stopMedia);
+function stopMedia() {
+  media.pause();
+  media.currentTime = 0;
+  play.setAttribute("data-icon", "P");
+}
+
+//seeking back and forth 
+rwd.addEventListener("click", mediaBackward);
+fwd.addEventListener("click", mediaForward);
+let intervalFwd;
+let intervalRwd;
+
+function mediaBackward() {
+  clearInterval(intervalFwd);
+  fwd.classList.remove("active");
+
+  if (rwd.classList.contains("active")) {
+    rwd.classList.remove("active");
+    clearInterval(intervalRwd);
+    media.play();
+  } else {
+    rwd.classList.add("active");
+    media.pause();
+    intervalRwd = setInterval(windBackward, 200);
   }
-});
+}
 
-// if track ends
-audioElement.addEventListener("ended", () => {
-  playBtn.setAttribute("class", "paused");
-  playBtn.textContent = "Play";
-});
+function mediaForward() {
+  clearInterval(intervalRwd);
+  rwd.classList.remove("active");
 
- 
+  if (fwd.classList.contains("active")) {
+    fwd.classList.remove("active");
+    clearInterval(intervalFwd);
+    media.play();
+  } else {
+    fwd.classList.add("active");
+    media.pause();
+    intervalFwd = setInterval(windForward, 200);
+  }
+}
+
+function windBackward() {
+  if (media.currentTime <= 3) {
+    rwd.classList.remove("active");
+    clearInterval(intervalRwd);
+    stopMedia();
+  } else {
+    media.currentTime -= 3;
+  }
+}
+
+function windForward() {
+  if (media.currentTime >= media.duration - 3) {
+    fwd.classList.remove("active");
+    clearInterval(intervalFwd);
+    stopMedia();
+  } else {
+    media.currentTime += 3;
+  }
+}
+
+//setting intervals
+media.addEventListener("timeupdate", setTime);
+function setTime() {
+  const minutes = Math.floor(media.currentTime / 60);
+  const seconds = Math.floor(media.currentTime - minutes * 60);
+
+  const minuteValue = minutes.toString().padStart(2, "0");
+  const secondValue = seconds.toString().padStart(2, "0");
+
+  const mediaTime = `${minuteValue}:${secondValue}`;
+  timer.textContent = mediaTime;
+
+  const barLength =
+    timerWrapper.clientWidth * (media.currentTime / media.duration);
+  timerBar.style.width = `${barLength}px`;
+}
+
+//fixing playing and pause
+rwd.classList.remove("active");
+fwd.classList.remove("active");
+clearInterval(intervalRwd);
+clearInterval(intervalFwd);
